@@ -1,4 +1,4 @@
-<mat-toolbar color="accent">
+<mat-toolbar color="accent" [class.delay]="isRoute('/home')">
     <button routerLink="/home" mat-button style="text-align: left"><i class="material-icons">face</i><span style="font-size: 16px;"> Me</span></button>
     <button routerLink="/cv" mat-button style="text-align: left"><i class="material-icons">subject</i><span style="font-size: 16px;"> Cv</span></button>
 </mat-toolbar>
