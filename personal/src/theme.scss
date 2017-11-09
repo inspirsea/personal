@@ -9,49 +9,62 @@ $theme: mat-dark-theme($primary, $accent, $warn);
 $white: white;
 
 body {
-    background-color: mat-color($primary, 900);
-    color: white;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  overflow: hidden;
+  background-color: mat-color($primary, 900);
+  color: white;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 .text {
-    display: flex;
-    justify-content: center;
-    font-size: 14px;
-    margin: auto;
-    max-width: 800px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  margin: auto;
+  max-width: 800px;
 }
 
-.delay {
-
+.navAnimation {
   opacity: 0;
 
-  -webkit-animation: fadein 2s forwards; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s forwards; /* Firefox < 16 */
-  -ms-animation: fadein 2s forwards; /* Internet Explorer */
-  -o-animation: fadein 2s forwards; /* Opera < 12.1 */
-  animation: fadein 2s forwards;
-  animation-delay: 2s;
+  -webkit-animation: fadein 3s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s forwards; /* Firefox < 16 */
+  -ms-animation: fadein 3s forwards; /* Internet Explorer */
+  -o-animation: fadein 3s forwards; /* Opera < 12.1 */
+  animation: fadein 3s forwards;
+  animation-delay: 6s;
 }
 
 .console-container { 
-  margin: auto;
+  left: calc(50% - 400px);
   margin-top: 50px;
-  width: 800px;
   height: 600px;
-  position: relative;
+  position: absolute;
   perspective: 800px;
+  animation: moveleft 1s forwards;
+  animation-delay: 6s;
+}
+
+.introduction {
+  font-size: 18px;
+  opacity: 0;
+  right: 0;
+  margin-top: 50px;
+  height: 600px;
+  width: 400px;
+  position: absolute;
+  animation: moveright 1s forwards;
+  animation-delay: 6s;
 }
 
 .console {
 
-  width: 100%;
-  height: 100%;
+  width: 800px;
+  height: 500px;
   position: absolute;
   transform-style: preserve-3d;
   transform-origin: center;
   animation: rotateY 1s forwards;
-  animation-delay: 2s;
+  animation-delay: 6s;
   border: 1px solid mat-color($accent, 600);
   padding: 10px;
   
@@ -60,7 +73,7 @@ body {
   .cmd {
     display: inline;
     font-family: "Courier";
-    font-size: 20px;
+    font-size: 22px;
     margin: 10px 0 0 10px;
   }
     
@@ -72,6 +85,7 @@ body {
     to{opacity: .0;}
   }
 }
+
 
 @keyframes fadein {
   from { opacity: 0; }
@@ -88,5 +102,15 @@ body {
     border-bottom: 2px solid $white;
     transform: scale3d(0,1,1); }
   to   { transform: scale3d(1,1,1) }
+}
+
+@keyframes moveleft {
+  from { left: calc(50% - 400px); }
+  to { left: 50px }
+}
+
+@keyframes moveright {
+  from { left: 100%; opacity: 1 }
+  to { left: 900px; opacity: 1 }
 }
 
