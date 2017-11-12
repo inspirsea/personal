@@ -1,15 +1,24 @@
 @import '~@angular/material/theming';
 @include mat-core();
 $primary: mat-palette($mat-grey, 800, 600, 400);
-$accent:  mat-palette($mat-purple, 600, 100, 800);
+$accent:  mat-palette($mat-purple, 700, 100, 800);
 $warn:    mat-palette($mat-red, 600);
 $theme: mat-dark-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 
 $white: white;
 
+.html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   background-color: mat-color($primary, 900);
   color: white;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -86,6 +95,27 @@ body {
   }
 }
 
+.cv-container {
+  display: flex;
+  flex-flow: row;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.cv {
+  display: flex;
+  flex: 0 0 800px;
+  flex-direction: column;
+  background-color: #313131;
+  border: 1px solid mat-color($accent, 900);
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.cv-row {
+  flex-direction: row; display: flex; flex: 1 1 auto;
+}
 
 @keyframes fadein {
   from { opacity: 0; }
@@ -114,3 +144,21 @@ body {
   to { left: 900px; opacity: 1 }
 }
 
+a {
+  color: mat-color($accent, 600);
+}
+
+h3 {
+  color: mat-color($accent, 600);
+  -webkit-margin-before: 0.9em;
+  -webkit-margin-after:  0.9em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+h4 {
+  -webkit-margin-before: 0.7em;
+  -webkit-margin-after:  0.7em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
