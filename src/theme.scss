@@ -110,7 +110,7 @@ body {
   border: 1px solid mat-color($accent, 900);
   border-radius: 3px;
   margin: 5px;
-  padding: 5px;
+  padding: 15px;
 }
 
 .cv-row {
@@ -161,4 +161,16 @@ h4 {
   -webkit-margin-after:  0.7em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
+}
+
+@media print { 
+  .cv {
+    border: 0px;
+  }
+
+  #navbar {
+    display: none;
+  }
+
+  .print-section {page-break-inside: avoid;}
 }
