@@ -1,12 +1,20 @@
 <mat-toolbar id="navbar" color="accent" [class.navAnimation]="isRoute('/home')">
-    <button routerLink="/home" mat-button style="text-align: left">
-        <i class="material-icons">face</i>
-        <span style="font-size: 16px;"> Me</span>
-    </button>
-    <button routerLink="/cv" mat-button style="text-align: left">
-        <i class="material-icons">subject</i>
-        <span style="font-size: 16px;"> Cv</span>
-    </button>
+    <div class="center-container">
+        <div class="nav-container">
+            <button routerLink="/home" mat-button style="text-align: left">
+                <i class="material-icons">face</i>
+                <span style="font-size: 16px;"> Me</span>
+            </button>
+            <button routerLink="/cv" mat-button style="text-align: left">
+                <i class="material-icons">subject</i>
+                <span style="font-size: 16px;"> Cv</span>
+            </button>
+            <!-- <button routerLink="/code" mat-button style="text-align: left">
+                <i class="material-icons">code</i>
+                <span style="font-size: 16px;"> Code</span>
+            </button> -->
+        </div>
+    </div>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

@@ -1,0 +1,15 @@
+<div style="display: flex; flex: 1 1">
+    <canvas #canvas height="400" width="600" style="border: 1px solid white"></canvas>
+    <div style="display: flex; flex: 1 1">
+        <div style="margin: 0px 5px; display: flex; flex: 1 1; flex-direction: column;">
+            <div *ngFor="let particleEmitter of particleEmitters">
+                <particle-emitter [particleEmitter]="particleEmitter"></particle-emitter>
+            </div>
+
+            <div class="button" (click)="add()">
+                <i class="material-icons" >add</i>
+            </div>
+        </div>
+
+    </div>
+</div>

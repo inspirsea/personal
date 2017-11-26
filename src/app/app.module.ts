@@ -7,12 +7,19 @@ import { HomeComponent } from './home.component';
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CvComponent } from './cv.component';
+//import { ParticleEmitterComponent } from './particle-system/particle-emitter.component';
+//import { ParticleSystemComponent } from './particle-system/particle-system.component';
+import { CodeComponent } from './code.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CvComponent
+    CvComponent,
+    //ParticleSystemComponent,
+    //ParticleEmitterComponent,
+    //CodeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,8 @@ import { CvComponent } from './cv.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

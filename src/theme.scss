@@ -1,7 +1,7 @@
 @import '~@angular/material/theming';
 @include mat-core();
 $primary: mat-palette($mat-grey, 800, 600, 400);
-$accent:  mat-palette($mat-purple, 700, 100, 800);
+$accent:  mat-palette($mat-orange, 700, 100, 800);
 $warn:    mat-palette($mat-red, 600);
 $theme: mat-dark-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
@@ -22,6 +22,10 @@ body {
   background-color: mat-color($primary, 900);
   color: white;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.mat-button {
+  color: white !important;
 }
 
 .text {
@@ -49,6 +53,11 @@ body {
   height: 600px;
   position: absolute;
   perspective: 800px;
+
+  -webkit-animation: moveleft 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: moveleft 1s forwards; /* Firefox < 16 */
+  -ms-animation: moveleft 1s forwards; /* Internet Explorer */
+  -o-animation: moveleft 1s forwards; /* Opera < 12.1 */
   animation: moveleft 1s forwards;
   animation-delay: 6s;
 }
@@ -61,6 +70,10 @@ body {
   height: 600px;
   width: 400px;
   position: absolute;
+  -webkit-animation: moveright 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: moveright 1s forwards; /* Firefox < 16 */
+  -ms-animation: moveright 1s forwards; /* Internet Explorer */
+  -o-animation: moveright 1s forwards; /* Opera < 12.1 */
   animation: moveright 1s forwards;
   animation-delay: 6s;
 }
@@ -72,6 +85,11 @@ body {
   position: absolute;
   transform-style: preserve-3d;
   transform-origin: center;
+
+  -webkit-animation: rotateY 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: rotateY 1s forwards; /* Firefox < 16 */
+  -ms-animation: rotateY 1s forwards; /* Internet Explorer */
+  -o-animation: rotateY 1s forwards; /* Opera < 12.1 */
   animation: rotateY 1s forwards;
   animation-delay: 6s;
   border: 1px solid mat-color($accent, 600);
@@ -93,24 +111,6 @@ body {
   @keyframes blink{
     to{opacity: .0;}
   }
-}
-
-.cv-container {
-  display: flex;
-  flex-flow: row;
-  flex: 1 1 auto;
-  justify-content: center;
-}
-
-.cv {
-  display: flex;
-  flex: 0 0 800px;
-  flex-direction: column;
-  background-color: #313131;
-  border: 1px solid mat-color($accent, 900);
-  border-radius: 3px;
-  margin: 5px;
-  padding: 15px;
 }
 
 .cv-row {
@@ -173,4 +173,40 @@ h4 {
   }
 
   .print-section {page-break-inside: avoid;}
+}
+
+.center-container {
+  display: flex;
+  flex-flow: row;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.content-container {
+  display: flex;
+  flex: 0 0 1000px;
+  flex-direction: column;  
+  margin: 5px;
+  padding: 15px;
+}
+
+.nav-container {
+  display: flex;
+  flex: 0 0 1032px;
+}
+
+.mat-toolbar {
+  padding: 0 !important;
+}
+
+.button {
+  border: 1px solid;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: mat-color($accent, 600);
+
+  &:hover {
+    background-color: mat-color($accent, 800);
+  }
 }
