@@ -44,4 +44,20 @@ export class ParticleEmitterComponent {
     public startMaxVY(value: number) {
         this.particleEmitter.velocityOption.y.max = value/1000;
     }
+
+    public sizeMin(value: number) {
+        this.particleEmitter.sizeOption.min = value;
+    }
+
+    public sizeMax(value: number) {
+        this.particleEmitter.sizeOption.max = value;
+    }
+
+    public setColor(value: string) {
+        this.particleEmitter.setColor(value);
+    }
+
+    public setGrowth(value: number) {
+        this.particleEmitter.setGrowth(value);
+    }
 }

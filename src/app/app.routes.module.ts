@@ -8,7 +8,7 @@ import { CodeComponent } from './code.component';
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'cv', component: CvComponent },
-    //{ path: 'code', component: CodeComponent },
+    { path: 'code', component: CodeComponent },
     { path: '**', redirectTo: 'home' },
 ];
 

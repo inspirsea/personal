@@ -3,16 +3,20 @@
 </div>
 <div style="display: flex; flex: 1 1">
     X
-    <mat-slider style="width: calc(100% - 30px);" #minx (change)="startMinX($event.value)" [value]="0" [min]="'-1'" [max]="'1'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #minx (change)="startMinX($event.value)" [value]="0" [min]="'-1'" [max]="'1'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px; padding: 0 3px;">{{minx.displayValue}}</span>
-    <mat-slider style="width: calc(100% - 30px);" #maxx (change)="startMaxX($event.value)" [value]="0" [min]="'-1'" [max]="'1'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #maxx (change)="startMaxX($event.value)" [value]="0" [min]="'-1'" [max]="'1'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px;">{{maxx.displayValue}}</span>
 </div>
 <div style="display: flex; flex: 1 1">
     Y
-    <mat-slider style="width: calc(100% - 30px);" #miny (change)="startMinY($event.value)" [value]="0" [min]="'-1'" [max]="'1'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #miny (change)="startMinY($event.value)" [value]="0" [min]="'-1'" [max]="'1'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px; padding: 0 3px;">{{miny.displayValue}}</span>
-    <mat-slider style="width: calc(100% - 30px);" #maxy (change)="startMaxY($event.value)" [value]="0" [min]="'-1'" [max]="'1'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #maxy (change)="startMaxY($event.value)" [value]="0" [min]="'-1'" [max]="'1'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px;">{{maxy.displayValue}}</span>
 </div>
 
@@ -21,15 +25,48 @@
 </div>
 <div style="display: flex; flex: 1 1">
     X
-    <mat-slider style="width: calc(100% - 30px);" #minvx (change)="startMinVX($event.value)" [value]="-1" [min]="'-4'" [max]="'4'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #minvx (change)="startMinVX($event.value)" [value]="-1" [min]="'-4'" [max]="'4'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px; padding: 0 3px;">{{minvx.displayValue}}</span>
-    <mat-slider style="width: calc(100% - 30px);" #maxvx (change)="startMaxVX($event.value)" [value]="1" [min]="'-4'" [max]="'4'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #maxvx (change)="startMaxVX($event.value)" [value]="1" [min]="'-4'" [max]="'4'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px;">{{maxvx.displayValue}}</span>
 </div>
 <div style="display: flex; flex: 1 1">
     Y
-    <mat-slider style="width: calc(100% - 30px);" #minvy (change)="startMinVY($event.value)" [value]="-1" [min]="'-4'" [max]="'4'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #minvy (change)="startMinVY($event.value)" [value]="-1" [min]="'-4'" [max]="'4'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px; padding: 0 3px;">{{minvy.displayValue}}</span>
-    <mat-slider style="width: calc(100% - 30px);" #maxvy (change)="startMaxVY($event.value)" [value]="1" [min]="'-4'" [max]="'4'" [step]="'0.01'"></mat-slider>
+    <mat-slider style="width: calc(100% - 30px);" #maxvy (change)="startMaxVY($event.value)" [value]="1" [min]="'-4'" [max]="'4'"
+        [step]="'0.01'"></mat-slider>
     <span style="margin-top: 15px;">{{maxvy.displayValue}}</span>
+</div>
+<div style="display: flex; flex: 1 1">
+    Size
+</div>
+<div style="display: flex; flex: 1 1">
+    <mat-slider style="width: calc(100% - 30px);" #sizemin (change)="sizeMin($event.value)" [value]="10" [min]="'1'" [max]="'20'"
+        [step]="'1'"></mat-slider>
+    <span style="margin-top: 15px; padding: 0 3px;">{{sizemin.displayValue}}</span>
+    <mat-slider style="width: calc(100% - 30px);" #sizemax (change)="sizeMax($event.value)" [value]="10" [min]="'1'" [max]="'20'"
+        [step]="'1'"></mat-slider>
+    <span style="margin-top: 15px;">{{sizemax.displayValue}}</span>
+</div>
+<div style="display: flex; flex: 1 1">
+    Growth
+</div>
+<div style="display: flex; flex: 1 1">
+    <mat-slider style="width: calc(100% - 30px);" #growth (change)="setGrowth($event.value)" [value]="0" [min]="'-30'" [max]="'30'"
+        [step]="'1'"></mat-slider>
+    <span style="margin-top: 15px; padding: 0 3px;">{{growth.displayValue}}</span>
+</div>
+<div style="display: flex; flex: 1 1">
+    Color
+</div>
+<div style="display: flex; flex: 1 1; padding: 10px 0;">
+    <input style="width: 100%" onfocus="this.blur()" (colorPickerChange)="setColor($event)" [(colorPicker)]="color" [style.background]="color"
+    />
+</div>
+<div style="margin: 10px 0;">
+    <hr>
 </div>
