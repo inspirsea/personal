@@ -1,10 +1,5 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
-import { ParticleSystem } from "../../../../ins-particle-system/lib/particle-system";
-import { ParticleEmitter } from "../../../../ins-particle-system/lib/particle-emitter";
-import { IpsOptions } from "../../../../ins-particle-system/lib/model/ips-options";
-import { IpsEmitterOptions } from "../../../../ins-particle-system/lib/model/ips-emitter-options";
-import { IpsCoordinates } from "../../../../ins-particle-system/lib/model/ips-coordinates";
-import { IpsPositionType } from "../../../../ins-particle-system/lib/model/ips-position-type";
+import { ParticleSystem, ParticleEmitter, IpsOptions, IpsEmitterOptions, IpsCoordinates, IpsPositiontype } from "ips";
 
 @Component({
   selector: 'particle-system',
@@ -21,7 +16,7 @@ export class ParticleSystemComponent {
   }
 
   ngAfterViewInit() {
-    let options = new IpsOptions(); 
+    let options = new IpsOptions();
     this.particleSystem = new ParticleSystem(options, this.canvas.nativeElement, 600, 400);
 
     this.particleSystem.onLoad.subscribe(it => {
@@ -31,10 +26,7 @@ export class ParticleSystemComponent {
 
   public add() {
     let options = new IpsEmitterOptions(new IpsCoordinates(0, 0, 0, 0), new IpsCoordinates(-1, 1, -1, 1), 1000);
-    options.positionType = IpsPositionType.Relative;
+    options.positionType = IpsPositiontype.Relative;
     this.particleEmitters.push(this.particleSystem.addEmitter(options));
   }
-
-
-
 }
