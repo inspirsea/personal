@@ -1,6 +1,8 @@
 import { Component, Input } from "@angular/core";
 import { ParticleEmitter } from "../../../../ins-particle-system/lib/particle-emitter";
 import { EmitterOptions } from "../../../../ins-particle-system/lib/model/emitter-options";
+import { IpsCoordinates } from "../../../../ins-particle-system/lib/model/ips-coordinates";
+import { MinMax } from "../../../../ins-particle-system/lib/model/min-max";
 
 @Component({
     selector: 'particle-emitter',
@@ -10,47 +12,61 @@ export class ParticleEmitterComponent {
 
     @Input() particleEmitter: ParticleEmitter;
 
+    private startOption: IpsCoordinates = new IpsCoordinates(0, 0, 0, 0);
+    private velocityOption: IpsCoordinates = new IpsCoordinates(-1, 1, -1, 1);
+    private sizeOption: MinMax<number> = { min: 0, max: 0 };
+
     constructor() {
     }
 
     public startMinX(value: number) {
-        this.particleEmitter.startOption.x.min = value;
+        this.startOption.x.min = value;
+        this.particleEmitter.setStartOption(this.startOption);
     }
 
     public startMaxX(value: number) {
-        this.particleEmitter.startOption.x.max = value;
+        this.startOption.x.max = value;
+        this.particleEmitter.setStartOption(this.startOption);
     }
 
     public startMinY(value: number) {
-        this.particleEmitter.startOption.y.min = value;
+        this.startOption.y.min = value;
+        this.particleEmitter.setStartOption(this.startOption);
     }
 
     public startMaxY(value: number) {
-        this.particleEmitter.startOption.y.max = value;
+        this.startOption.y.max = value;
+        this.particleEmitter.setStartOption(this.startOption);
     }
 
     public startMinVX(value: number) {
-        this.particleEmitter.velocityOption.x.min = value/1000;
+        this.velocityOption.x.min = value;
+        this.particleEmitter.setVelocityOption(this.velocityOption);
     }
 
     public startMaxVX(value: number) {
-        this.particleEmitter.velocityOption.x.max = value/1000;
+        this.velocityOption.x.max = value;
+        this.particleEmitter.setVelocityOption(this.velocityOption);
     }
 
     public startMinVY(value: number) {
-        this.particleEmitter.velocityOption.y.min = value/1000;
+        this.velocityOption.y.min = value;
+        this.particleEmitter.setVelocityOption(this.velocityOption);
     }
 
     public startMaxVY(value: number) {
-        this.particleEmitter.velocityOption.y.max = value/1000;
+        this.velocityOption.y.max = value;
+        this.particleEmitter.setVelocityOption(this.velocityOption);
     }
 
     public sizeMin(value: number) {
-        this.particleEmitter.sizeOption.min = value;
+        this.sizeOption.min = value;
+        this.particleEmitter.setSizeOption(this.sizeOption);
     }
 
     public sizeMax(value: number) {
-        this.particleEmitter.sizeOption.max = value;
+        this.sizeOption.max = value;
+        this.particleEmitter.setSizeOption(this.sizeOption);
     }
 
     public setColor(value: string) {
