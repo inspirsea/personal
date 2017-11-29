@@ -11,6 +11,7 @@ import { ParticleSystemComponent } from './particle-system/particle-system.compo
 import { CodeComponent } from './code.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { HighlightJsModule } from 'angular2-highlight-js';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatSliderModule
+    MatSliderModule,
+    HighlightJsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
