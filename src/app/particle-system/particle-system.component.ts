@@ -10,7 +10,7 @@ export class ParticleSystemComponent {
   @ViewChild('canvas') canvas: ElementRef;
 
   private particleSystem: ParticleSystem;
-  private particleEmitters: ParticleEmitter[] = [];
+  public particleEmitters: ParticleEmitter[] = [];
 
   constructor() {
   }

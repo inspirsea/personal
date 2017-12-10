@@ -210,3 +210,26 @@ h4 {
     background-color: mat-color($accent, 800);
   }
 }
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  margin: 0;
+  padding: 0 !important;
+}
+
+.codeblock-outer {
+  border: 1px solid mat-color($accent);
+  margin: 20px 0;
+}
+
+.codeblock-inner {
+  background-color: #23241f;
+}
+
+.codeblock-text {
+  padding: 15px 5px;
+}

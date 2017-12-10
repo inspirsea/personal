@@ -3,20 +3,82 @@
 
         <h3>Particle-ins</h3>
 
-        <div style="margin-bottom: 20px">
-            Particle-ins is a library to quickly and efficiently create particle effects.<br>
-            Written in Typescript, uses WebGL for rendering.
+        <div>
+            Particle-ins is a library to quickly and efficiently create particle effects.
+            <br> Written in Typescript, uses WebGL for rendering.
         </div>
 
-        <canvas width="1000" height="600" id="example1">
-        </canvas>
+        <div class="codeblock-outer">
+            <div class="codeblock-inner">
+                <canvas width="1000" height="600" id="example1">
+                </canvas>
 
-        <div highlight-js-content>
-            <pre>
-                <code [innerHtml]="example1Code">
-                    
-                </code>
-            </pre>
+                <div highlight-js-content>
+                    <pre>
+                        <code [innerHtml]="example1Code"></code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="codeblock-text">
+                Particle system with 1 emitter emitting from relative position (0, 0) in all directions. 1000 particles per second.
+            </div>
+        </div>
+
+        <div class="codeblock-outer">
+            <div class="codeblock-inner">
+                <canvas width="1000" height="600" id="example2">
+                </canvas>
+
+                <div highlight-js-content>
+                    <pre>
+                        <code [innerHtml]="example2Code"></code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="codeblock-text">
+                3 emitters using 1/3 of the screen each. Generating 1000 particles each. Startposition randomly selected from max and min
+                paramaters.
+            </div>
+        </div>
+
+        <div class="codeblock-outer">
+            <div class="codeblock-inner">
+                <canvas width="1000" height="600" id="example3">
+                </canvas>
+
+                <div highlight-js-content>
+                    <pre>
+                            <code [innerHtml]="example3Code"></code>
+                        </pre>
+                </div>
+            </div>
+
+            <div class="codeblock-text">
+                1 emitter with a custom particle texture, startposition top of the screen. Falls down and sideways.
+            </div>
+        </div>
+
+        <div class="codeblock-outer">
+            <div class="codeblock-inner">
+                <canvas width="1000" height="600" id="example4">
+                </canvas>
+
+                <div highlight-js-content>
+                    <pre>
+                        <code [innerHtml]="example4Code"></code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="codeblock-text">
+                2 emitters with an upwards direction, First one with a large growth value. Second one with a small size and a negative growth.
+            </div>
+        </div>
+
+        <div class="codeblock-text">
+            Play around with Particle-ins(click on the plus sign)!
         </div>
 
         <particle-system></particle-system>
