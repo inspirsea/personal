@@ -9,7 +9,7 @@ export class ParticleEmitterComponent {
 
     @Input() particleEmitter: ParticleEmitter;
 
-    public color = "ffffff";
+    public color;
     private startOption: IpsCoordinates = new IpsCoordinates(0, 0, 0, 0);
     private velocityOption: IpsCoordinates = new IpsCoordinates(-1, 1, -1, 1);
     private sizeOption: MinMax<number> = { min: 0, max: 0 };
