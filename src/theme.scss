@@ -36,19 +36,8 @@ body {
   max-width: 800px;
 }
 
-.navAnimation {
-  opacity: 0;
-
-  -webkit-animation: fadein 3s forwards; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s forwards; /* Firefox < 16 */
-  -ms-animation: fadein 3s forwards; /* Internet Explorer */
-  -o-animation: fadein 3s forwards; /* Opera < 12.1 */
-  animation: fadein 3s forwards;
-  animation-delay: 6s;
-}
-
 .console-container { 
-  left: calc(50% - 400px);
+  left: 25%;
   margin-top: 50px;
   height: 600px;
   position: absolute;
@@ -135,7 +124,7 @@ body {
 }
 
 @keyframes moveleft {
-  from { left: calc(50% - 400px); }
+  from { left: 25%; }
   to { left: 50px }
 }
 
@@ -164,6 +153,7 @@ h4 {
 }
 
 @media print { 
+
   .cv {
     border: 0px;
   }
@@ -172,7 +162,10 @@ h4 {
     display: none;
   }
 
-  .print-section {page-break-inside: avoid;}
+  .print-section {
+    color: black;
+    page-break-inside: avoid;
+  }
 }
 
 .center-container {
