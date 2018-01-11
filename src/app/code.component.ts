@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, OnDestroy } from '@angular/core';
 import { IpsOptions, ParticleSystem, IpsEmitterOptions, IpsCoordinates, IpsPositiontype } from 'particle-ins';
 import { ImageItem } from '../../../Particle-ins/lib/model/image-item';
 
@@ -6,7 +6,17 @@ import { ImageItem } from '../../../Particle-ins/lib/model/image-item';
     selector: 'code-content',
     templateUrl: './code.component.html'
 })
-export class CodeComponent {
+export class CodeComponent implements AfterViewInit, OnDestroy {
+
+    @ViewChild('ex1Canvas') ex1Canvas: ElementRef;
+    @ViewChild('ex2Canvas') ex2Canvas: ElementRef;
+    @ViewChild('ex3Canvas') ex3Canvas: ElementRef;
+    @ViewChild('ex4Canvas') ex4Canvas: ElementRef;
+
+    public particleSystem1: ParticleSystem;
+    public particleSystem2: ParticleSystem;
+    public particleSystem3: ParticleSystem;
+    public particleSystem4: ParticleSystem;
 
     constructor() {
     }
@@ -106,7 +116,7 @@ export class CodeComponent {
     emitterOptions.positionType = IpsPositiontype.Relative;
 
     particleSystem.addEmitter(emitterOptions);
-    `
+    `;
 
     public example4Code = `
         let canvas = document.getElementById("example4") as HTMLCanvasElement;
@@ -149,17 +159,20 @@ export class CodeComponent {
         this.example4();
     }
 
-
+    ngOnDestroy() {
+        this.particleSystem1.destroy();
+        this.particleSystem2.destroy();
+        this.particleSystem3.destroy();
+        this.particleSystem4.destroy();
+    }
 
     public example1() {
 
-        let canvas = document.getElementById("example1") as HTMLCanvasElement;
-
         let options = new IpsOptions();
-        let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
+        this.particleSystem1 = new ParticleSystem(options, this.ex1Canvas.nativeElement, 1000, 600);
 
-        particleSystem.onLoad.subscribe(it => {
-            particleSystem.start();
+        this.particleSystem1.onLoad.subscribe(it => {
+            this.particleSystem1.start();
         });
 
         let emitterOptions = new IpsEmitterOptions(
@@ -169,17 +182,16 @@ export class CodeComponent {
         );
 
         emitterOptions.positionType = IpsPositiontype.Relative;
-        particleSystem.addEmitter(emitterOptions);
+        this.particleSystem1.addEmitter(emitterOptions);
     }
 
     public example2() {
-        let canvas = document.getElementById("example2") as HTMLCanvasElement;
 
         let options = new IpsOptions();
-        let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
+        this.particleSystem2 = new ParticleSystem(options, this.ex2Canvas.nativeElement, 1000, 600);
 
-        particleSystem.onLoad.subscribe(it => {
-            particleSystem.start();
+        this.particleSystem2.onLoad.subscribe(it => {
+            this.particleSystem2.start();
         });
 
         let emitterOptions = new IpsEmitterOptions(
@@ -189,7 +201,7 @@ export class CodeComponent {
             1000,
             { min: 20, max: 40 },
             -100,
-            "ffaa87"
+            'ffaa87'
         );
 
         let emitterOptions2 = new IpsEmitterOptions(
@@ -199,7 +211,7 @@ export class CodeComponent {
             1000,
             { min: 1, max: 3 },
             10,
-            "3345ff"
+            '3345ff'
         );
 
         let emitterOptions3 = new IpsEmitterOptions(
@@ -209,28 +221,26 @@ export class CodeComponent {
             500,
             { min: 3, max: 10 },
             -10,
-            "aa4587"
+            'aa4587'
         );
 
-        particleSystem.addEmitter(emitterOptions);
-        particleSystem.addEmitter(emitterOptions2);
-        particleSystem.addEmitter(emitterOptions3);
+        this.particleSystem2.addEmitter(emitterOptions);
+        this.particleSystem2.addEmitter(emitterOptions2);
+        this.particleSystem2.addEmitter(emitterOptions3);
     }
 
     public example3() {
-        let canvas = document.getElementById("example3") as HTMLCanvasElement;
-
         let snowTexture: ImageItem = {
-            image: "../assets/images/snowflake.png",
-            key: "snow"
-        }
+            image: '../assets/images/snowflake.png',
+            key: 'snow'
+        };
         let options = new IpsOptions();
         options.textures = [snowTexture];
-        options.color = "cccccc"
-        let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
+        options.color = 'cccccc';
+        this.particleSystem3 = new ParticleSystem(options, this.ex3Canvas.nativeElement, 1000, 600);
 
-        particleSystem.onLoad.subscribe(it => {
-            particleSystem.start();
+        this.particleSystem3.onLoad.subscribe(it => {
+            this.particleSystem3.start();
         });
 
         let emitterOptions = new IpsEmitterOptions(
@@ -240,22 +250,20 @@ export class CodeComponent {
             2500
         );
 
-        emitterOptions.size = { min: 3, max: 8 }
+        emitterOptions.size = { min: 3, max: 8 };
 
-        emitterOptions.textureKey = "snow";
+        emitterOptions.textureKey = 'snow';
 
         emitterOptions.positionType = IpsPositiontype.Relative;
-        particleSystem.addEmitter(emitterOptions);
+        this.particleSystem3.addEmitter(emitterOptions);
     }
 
     public example4() {
-        let canvas = document.getElementById("example4") as HTMLCanvasElement;
-
         let options = new IpsOptions();
-        let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
+        this.particleSystem4 = new ParticleSystem(options, this.ex4Canvas.nativeElement, 1000, 600);
 
-        particleSystem.onLoad.subscribe(it => {
-            particleSystem.start();
+        this.particleSystem4.onLoad.subscribe(it => {
+            this.particleSystem4.start();
         });
 
         let emitterOptions = new IpsEmitterOptions(
@@ -265,7 +273,7 @@ export class CodeComponent {
         );
 
         emitterOptions.growth = 50;
-        emitterOptions.color = "f27d0c";
+        emitterOptions.color = 'f27d0c';
 
         let emitterOptions2 = new IpsEmitterOptions(
             new IpsCoordinates(495, 505, 200, 200),
@@ -276,9 +284,9 @@ export class CodeComponent {
 
         emitterOptions2.size = { min: 1, max: 5 };
         emitterOptions2.growth = -3;
-        emitterOptions2.color = "fdcf58";
+        emitterOptions2.color = 'fdcf58';
 
-        particleSystem.addEmitter(emitterOptions);
-        particleSystem.addEmitter(emitterOptions2);
+        this.particleSystem4.addEmitter(emitterOptions);
+        this.particleSystem4.addEmitter(emitterOptions2);
     }
 }

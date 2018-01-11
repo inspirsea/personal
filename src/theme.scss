@@ -163,8 +163,16 @@ h4 {
   }
 
   .print-section {
+    width: 600px;
     color: black;
     page-break-inside: avoid;
+  }
+
+  .content-container {
+    display: flex;
+    flex: 0 0 600px !important;
+    margin: 0px !important;
+    padding: 0px !important;
   }
 }
 

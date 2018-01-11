@@ -1,11 +1,11 @@
-import { Component, ViewChild, ElementRef } from "@angular/core";
-import { ParticleSystem, ParticleEmitter, IpsOptions, IpsEmitterOptions, IpsCoordinates, IpsPositiontype } from "particle-ins";
+import { Component, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { ParticleSystem, ParticleEmitter, IpsOptions, IpsEmitterOptions, IpsCoordinates, IpsPositiontype } from 'particle-ins';
 
 @Component({
   selector: 'particle-system',
   templateUrl: './particle-system.component.html'
 })
-export class ParticleSystemComponent {
+export class ParticleSystemComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('canvas') canvas: ElementRef;
 
@@ -22,6 +22,11 @@ export class ParticleSystemComponent {
     this.particleSystem.onLoad.subscribe(it => {
       this.particleSystem.start();
     });
+  }
+
+  ngOnDestroy() {
+    this.particleSystem.destroy();
+    this.particleSystem = null;
   }
 
   public add() {
