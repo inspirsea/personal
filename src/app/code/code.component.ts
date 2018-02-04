@@ -1,6 +1,6 @@
 import { Component, ElementRef, AfterViewInit, ViewChild, OnDestroy } from '@angular/core';
 import { IpsOptions, ParticleSystem, IpsEmitterOptions, IpsCoordinates, IpsPositiontype } from 'particle-ins';
-import { ImageItem } from '../../../Particle-ins/lib/model/image-item';
+import { ImageItem } from '../../../../Particle-ins/lib/model/image-item';
 
 @Component({
     selector: 'code-content',
@@ -27,10 +27,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
     let options = new IpsOptions();
     let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
 
-    particleSystem.onLoad.subscribe(it => {
-      particleSystem.start();
-    });
-
     let emitterOptions = new IpsEmitterOptions(
         new IpsCoordinates(0, 0, 0, 0),
         new IpsCoordinates(-1, 1, -1, 1),
@@ -46,10 +42,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
 
     let options = new IpsOptions();
     let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
-
-    particleSystem.onLoad.subscribe(it => {
-        particleSystem.start();
-    });
 
     let emitterOptions = new IpsEmitterOptions(
         new IpsCoordinates(0, 333, 0, 600),
@@ -100,10 +92,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
     
     let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
 
-    particleSystem.onLoad.subscribe(it => {
-        particleSystem.start();
-    });
-
     let emitterOptions = new IpsEmitterOptions(
         new IpsCoordinates(-1, 1, 1, 1),
         new IpsCoordinates(-0.5, 0.5, -0.8, -0.8),
@@ -123,10 +111,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
 
         let options = new IpsOptions();
         let particleSystem = new ParticleSystem(options, canvas, 1000, 600);
-
-        particleSystem.onLoad.subscribe(it => {
-            particleSystem.start();
-        });
 
         let emitterOptions = new IpsEmitterOptions(
             new IpsCoordinates(495, 505, 200, 200),
@@ -171,10 +155,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
         let options = new IpsOptions();
         this.particleSystem1 = new ParticleSystem(options, this.ex1Canvas.nativeElement, 1000, 600);
 
-        this.particleSystem1.onLoad.subscribe(it => {
-            this.particleSystem1.start();
-        });
-
         let emitterOptions = new IpsEmitterOptions(
             new IpsCoordinates(0, 0, 0, 0),
             new IpsCoordinates(-1, 1, -1, 1),
@@ -189,10 +169,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
 
         let options = new IpsOptions();
         this.particleSystem2 = new ParticleSystem(options, this.ex2Canvas.nativeElement, 1000, 600);
-
-        this.particleSystem2.onLoad.subscribe(it => {
-            this.particleSystem2.start();
-        });
 
         let emitterOptions = new IpsEmitterOptions(
             new IpsCoordinates(0, 333, 0, 600),
@@ -239,10 +215,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
         options.color = 'cccccc';
         this.particleSystem3 = new ParticleSystem(options, this.ex3Canvas.nativeElement, 1000, 600);
 
-        this.particleSystem3.onLoad.subscribe(it => {
-            this.particleSystem3.start();
-        });
-
         let emitterOptions = new IpsEmitterOptions(
             new IpsCoordinates(-1, 1, 1, 1),
             new IpsCoordinates(-0.5, 0.5, -0.8, -0.8),
@@ -261,10 +233,6 @@ export class CodeComponent implements AfterViewInit, OnDestroy {
     public example4() {
         let options = new IpsOptions();
         this.particleSystem4 = new ParticleSystem(options, this.ex4Canvas.nativeElement, 1000, 600);
-
-        this.particleSystem4.onLoad.subscribe(it => {
-            this.particleSystem4.start();
-        });
 
         let emitterOptions = new IpsEmitterOptions(
             new IpsCoordinates(495, 505, 200, 200),

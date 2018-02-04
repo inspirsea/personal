@@ -1,11 +1,10 @@
 @import '~@angular/material/theming';
 @include mat-core();
 $primary: mat-palette($mat-grey, 800, 600, 400);
-$accent:  mat-palette($mat-orange, 700, 100, 800);
-$warn:    mat-palette($mat-red, 600);
+$accent : mat-palette($mat-orange, 700, 100, 800);
+$warn : mat-palette($mat-red, 600);
 $theme: mat-dark-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
-
 $white: white;
 
 .html {
@@ -36,17 +35,20 @@ body {
   max-width: 800px;
 }
 
-.console-container { 
+.console-container {
   left: 25%;
   margin-top: 50px;
   height: 600px;
   position: absolute;
   perspective: 800px;
-
-  -webkit-animation: moveleft 1s forwards; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: moveleft 1s forwards; /* Firefox < 16 */
-  -ms-animation: moveleft 1s forwards; /* Internet Explorer */
-  -o-animation: moveleft 1s forwards; /* Opera < 12.1 */
+  -webkit-animation: moveleft 1s forwards;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: moveleft 1s forwards;
+  /* Firefox < 16 */
+  -ms-animation: moveleft 1s forwards;
+  /* Internet Explorer */
+  -o-animation: moveleft 1s forwards;
+  /* Opera < 12.1 */
   animation: moveleft 1s forwards;
   animation-delay: 6s;
 }
@@ -59,78 +61,106 @@ body {
   height: 600px;
   width: 400px;
   position: absolute;
-  -webkit-animation: moveright 1s forwards; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: moveright 1s forwards; /* Firefox < 16 */
-  -ms-animation: moveright 1s forwards; /* Internet Explorer */
-  -o-animation: moveright 1s forwards; /* Opera < 12.1 */
+  -webkit-animation: moveright 1s forwards;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: moveright 1s forwards;
+  /* Firefox < 16 */
+  -ms-animation: moveright 1s forwards;
+  /* Internet Explorer */
+  -o-animation: moveright 1s forwards;
+  /* Opera < 12.1 */
   animation: moveright 1s forwards;
   animation-delay: 6s;
 }
 
 .console {
-
   width: 800px;
   height: 500px;
   position: absolute;
   transform-style: preserve-3d;
   transform-origin: center;
-
-  -webkit-animation: rotateY 1s forwards; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: rotateY 1s forwards; /* Firefox < 16 */
-  -ms-animation: rotateY 1s forwards; /* Internet Explorer */
-  -o-animation: rotateY 1s forwards; /* Opera < 12.1 */
+  -webkit-animation: rotateY 1s forwards;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: rotateY 1s forwards;
+  /* Firefox < 16 */
+  -ms-animation: rotateY 1s forwards;
+  /* Internet Explorer */
+  -o-animation: rotateY 1s forwards;
+  /* Opera < 12.1 */
   animation: rotateY 1s forwards;
   animation-delay: 6s;
   border: 1px solid mat-color($accent, 600);
   padding: 10px;
-  
   background-color: black;
-
   .cmd {
     display: inline;
     font-family: "Courier";
     font-size: 22px;
     margin: 10px 0 0 10px;
   }
-    
-  span{
+  span {
     animation: blink 1s infinite;
-  } 
-  
-  @keyframes blink{
-    to{opacity: .0;}
+  }
+  @keyframes blink {
+    to {
+      opacity: .0;
+    }
   }
 }
 
 .cv-row {
-  flex-direction: row; display: flex; flex: 1 1 auto;
+  flex-direction: row;
+  display: flex;
+  flex: 1 1 auto;
 }
 
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes rotateY {
-  from { transform: rotateY(0); }
-  to   { transform: rotateY(10deg); }
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(10deg);
+  }
 }
 
 @keyframes scale {
-  from { border-top: 2px solid $white;
+  from {
+    border-top: 2px solid $white;
     border-bottom: 2px solid $white;
-    transform: scale3d(0,1,1); }
-  to   { transform: scale3d(1,1,1) }
+    transform: scale3d(0, 1, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1)
+  }
 }
 
 @keyframes moveleft {
-  from { left: 25%; }
-  to { left: 50px }
+  from {
+    left: 25%;
+  }
+  to {
+    left: 50px
+  }
 }
 
 @keyframes moveright {
-  from { left: 100%; opacity: 1 }
-  to { left: 900px; opacity: 1 }
+  from {
+    left: 100%;
+    opacity: 1
+  }
+  to {
+    left: 900px;
+    opacity: 1
+  }
 }
 
 a {
@@ -140,34 +170,30 @@ a {
 h3 {
   color: mat-color($accent, 600);
   -webkit-margin-before: 0.9em;
-  -webkit-margin-after:  0.9em;
+  -webkit-margin-after: 0.9em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
 }
 
 h4 {
   -webkit-margin-before: 0.7em;
-  -webkit-margin-after:  0.7em;
+  -webkit-margin-after: 0.7em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
 }
 
-@media print { 
-
+@media print {
   .cv {
     border: 0px;
   }
-
   #navbar {
     display: none;
   }
-
   .print-section {
     width: 600px;
     color: black;
     page-break-inside: avoid;
   }
-
   .content-container {
     display: flex;
     flex: 0 0 600px !important;
@@ -186,7 +212,7 @@ h4 {
 .content-container {
   display: flex;
   flex: 0 0 1000px;
-  flex-direction: column;  
+  flex-direction: column;
   margin: 5px;
   padding: 15px;
 }
@@ -206,7 +232,6 @@ h4 {
   border-radius: 3px;
   cursor: pointer;
   background-color: mat-color($accent, 600);
-
   &:hover {
     background-color: mat-color($accent, 800);
   }
@@ -233,4 +258,9 @@ code {
 
 .codeblock-text {
   padding: 15px 5px;
+}
+
+.accent {
+  color: mat-color($accent, 600);
+  font-weight: bold;
 }
