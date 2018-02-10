@@ -1,0 +1,63 @@
+<ngx-tree-header></ngx-tree-header>
+
+<h3>Api</h3>
+
+<span class="accent">Inputs</span>
+<mat-list>
+  <mat-list-item> nodeItems: {{nodeItemType}} </mat-list-item>
+  <mat-list-item> callbacks: TreeCallbacks </mat-list-item>
+  <mat-list-item> options: TreeOptions</mat-list-item>
+  <mat-list-item> filter: string</mat-list-item>
+</mat-list>
+
+<br>
+<span class="accent">Outputs</span>
+<mat-list>
+  <mat-list-item> selectedItems: {{selectedItemsType}} </mat-list-item>
+</mat-list>
+
+<br>
+<span class="accent">Methods</span>
+<mat-list>
+  <mat-list-item> {{addByIdSignature}} </mat-list-item>
+  <mat-list-item> {{deleteByIdSignature}} </mat-list-item>
+  <mat-list-item> expandAll()</mat-list-item>
+  <mat-list-item> collapseAll()</mat-list-item>
+</mat-list>
+
+
+<h3>{{nodeItemType}}</h3>
+
+<mat-list>
+  <mat-list-item> name: string | Display name of the node </mat-list-item>
+  <mat-list-item> item?: T | Item bound to the node, this is what will be returned on select.</mat-list-item>
+  <mat-list-item> id?: string</mat-list-item>
+  <mat-list-item> {{childrenSignature}} | If children is not set, the node is a leaf.</mat-list-item>
+  <mat-list-item> selected?: boolean | Determines if the node is selected from start. Default is false.</mat-list-item>
+  <mat-list-item> expanded?: boolean | Determines if the node is expanded from start. Only nodes that have children. Default is true.</mat-list-item>
+</mat-list>
+
+<h3>TreeOptions</h3>
+
+<mat-list>
+  <mat-list-item>mode: TreeMode | Which mode the tree should use, see TreeMode.</mat-list-item>
+  <mat-list-item>checkboxes: boolean | Determines if the tree should have checkboxes for displaying selected nodes.</mat-list-item>
+  <mat-list-item>alwaysEmitSelected: boolean | If true emits selectedItems on every select else only on init.</mat-list-item>
+</mat-list>
+
+<h3>TreeCallbacks</h3>
+
+<mat-list>
+  <mat-list-item>{{nameCallbackSignature}}</mat-list-item>
+  <mat-list-item>{{selectCallbackSignature}}</mat-list-item>
+  <mat-list-item>{{unSelectCallbackSignature}}</mat-list-item>
+  <mat-list-item>{{toggleCallbackSignature}}</mat-list-item>
+</mat-list>
+
+<h3>TreeMode</h3>
+
+<mat-list>
+  <mat-list-item>NoSelect | Dont allow item selection</mat-list-item>
+  <mat-list-item>SingleSelect | Select one item at a time, if a second item is selected it will replace the current one.</mat-list-item>
+  <mat-list-item>MultiSelect | Select multiple items.</mat-list-item>
+</mat-list>

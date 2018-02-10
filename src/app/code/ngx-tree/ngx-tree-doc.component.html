@@ -1,0 +1,43 @@
+<ngx-tree-header></ngx-tree-header>
+
+<h3>Introduction</h3>
+<div>
+  Tree-ngx is designed to be usable "out of the box", aswell as beeing highly customizable. Tested in angular 4 and 5, and
+  in Chrome, FF, Opera, Edge.
+</div>
+
+<br>
+
+<a routerLink="/code/tree-ngx-example">Demo</a>
+
+<h3>Installation</h3>
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      npm install tree-ngx --save
+    </code>
+  </pre>
+</div>
+
+Import the scss
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      @import '../node_modules/tree-ngx/style/ngx-tree.scss';
+    </code>
+  </pre>
+</div>
+
+<h3>Basic example</h3>
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      {{exampleCode}}
+    </code>
+  </pre>
+</div>
+
+<tree-ngx [nodeItems]="nodeItems"></tree-ngx>

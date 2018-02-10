@@ -264,3 +264,10 @@ code {
   color: mat-color($accent, 600);
   font-weight: bold;
 }
+
+.ngx-tree-submenu {
+  font-size: 18px;
+  color: mat-color($accent, 600);
+  width: 200px;
+  text-align: left !important;
+}

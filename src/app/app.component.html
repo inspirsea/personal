@@ -1,20 +1,29 @@
 <mat-toolbar id="navbar" color="accent">
-    <div class="center-container">
-        <div class="nav-container">
-            <button routerLink="/home" mat-button style="text-align: left">
-                <i class="material-icons">face</i>
-                <span style="font-size: 16px;"> Me</span>
-            </button>
-            <button routerLink="/cv" mat-button style="text-align: left">
-                <i class="material-icons">subject</i>
-                <span style="font-size: 16px;"> Cv</span>
-            </button>
-            <button routerLink="/code" mat-button style="text-align: left">
-                <i class="material-icons">code</i>
-                <span style="font-size: 16px;"> Code</span>
-            </button>
-        </div>
+  <div class="center-container">
+    <div class="nav-container">
+      <button routerLink="/home" mat-button style="text-align: left">
+        <i class="material-icons">face</i>
+        <span style="font-size: 16px;"> Me</span>
+      </button>
+      <button routerLink="/cv" mat-button style="text-align: left">
+        <i class="material-icons">subject</i>
+        <span style="font-size: 16px;"> Cv</span>
+      </button>
+      <button mat-button [matMenuTriggerFor]="codeMenu" style="text-align: left">
+        <i class="material-icons">code</i>
+        <span style="font-size: 16px;"> Code</span>
+      </button>
     </div>
+  </div>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<mat-menu #codeMenu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item routerLink="/code/particle-ins"> Particle-ins </button>
+  <button mat-menu-item routerLink="/code/tree-ngx-intro"> Tree-ngx </button>
+</mat-menu>
+
+<div class="center-container">
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

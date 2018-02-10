@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Station } from '../../model/system';
+import { Station } from '../../../model/system';
 
 @Component({
     selector: 'station',

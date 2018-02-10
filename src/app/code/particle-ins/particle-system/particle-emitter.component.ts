@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-import { ParticleSystem, ParticleEmitter, IpsOptions, IpsEmitterOptions, IpsCoordinates, IpsPositiontype, MinMax } from "particle-ins";
+import { Component, Input } from '@angular/core';
+import { ParticleSystem, ParticleEmitter, IpsOptions, IpsEmitterOptions, IpsCoordinates, IpsPositiontype, MinMax } from 'particle-ins';
 
 @Component({
     selector: 'particle-emitter',

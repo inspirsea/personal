@@ -3,19 +3,22 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routes.module';
 import { HomeComponent } from './home/home.component';
-import { MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatMenuModule, MatListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CvComponent } from './cv/cv.component';
-import { ParticleEmitterComponent } from './code/particle-system/particle-emitter.component';
-import { ParticleSystemComponent } from './code/particle-system/particle-system.component';
-import { CodeComponent } from './code/code.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { HighlightJsModule } from 'angular2-highlight-js';
 import { TreeNgxModule } from 'tree-ngx';
-import { TreeExampleComponent } from './code/tree-example/tree-example.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StationComponent } from './code/tree-example/station.component';
+import { ParticleSystemComponent } from './code/particle-ins/particle-system/particle-system.component';
+import { ParticleEmitterComponent } from './code/particle-ins/particle-system/particle-emitter.component';
+import { ParticleInsDocComponent } from './code/particle-ins/particle-ins-doc.component';
+import { TreeExampleComponent } from './code/ngx-tree/tree-example/tree-example.component';
+import { StationComponent } from './code/ngx-tree/tree-example/station.component';
+import { NgxTreeDocComponent } from './code/ngx-tree/ngx-tree-doc.component';
+import { NgxTreeHeaderComponent } from './code/ngx-tree/ngx-tree-header-doc/ngx-tree-header-doc.component';
+import { NgxTreeApiComponent } from './code/ngx-tree/ngx-tree-api/ngx-tree-api.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,12 @@ import { StationComponent } from './code/tree-example/station.component';
     CvComponent,
     ParticleSystemComponent,
     ParticleEmitterComponent,
-    CodeComponent,
+    ParticleInsDocComponent,
     TreeExampleComponent,
-    StationComponent
+    StationComponent,
+    NgxTreeDocComponent,
+    NgxTreeHeaderComponent,
+    NgxTreeApiComponent
   ],
   imports: [
     BrowserModule,
@@ -34,13 +40,16 @@ import { StationComponent } from './code/tree-example/station.component';
     ColorPickerModule,
     AppRoutingModule,
     MatToolbarModule,
+    MatListModule,
+    MatMenuModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatSliderModule,
     HighlightJsModule,
     TreeNgxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

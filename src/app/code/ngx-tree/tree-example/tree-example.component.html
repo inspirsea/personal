@@ -1,0 +1,13 @@
+<h3>Populated Systems </h3>
+<div style="display: flex; flex: 1 1; flex-direction: row">
+  <div style="display: flex; flex: 1 1;">
+    <tree-ngx class="my-custom-tree" [nodeItems]="items" [options]="options" (selectedItems)="selectedItemsChanged($event)">
+      <ng-template #nodeNameTemplate let-node="node" let-context="context">
+        <span (click)="context.toggleExpand()">{{node.name}}</span>
+      </ng-template>
+    </tree-ngx>
+  </div>
+  <div style="display: flex; flex: 1 1;">
+    <station [station]="station" *ngFor="let station of selected"></station>
+  </div>
+</div>

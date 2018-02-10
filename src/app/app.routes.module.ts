@@ -2,15 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CvComponent } from './cv/cv.component';
-import { ParticleSystemComponent } from './code/particle-system/particle-system.component';
-import { CodeComponent } from './code/code.component';
-import { TreeExampleComponent } from './code/tree-example/tree-example.component';
+import { ParticleInsDocComponent } from './code/particle-ins/particle-ins-doc.component';
+import { NgxTreeDocComponent } from './code/ngx-tree/ngx-tree-doc.component';
+import { TreeExampleComponent } from './code/ngx-tree/tree-example/tree-example.component';
+import { NgxTreeApiComponent } from './code/ngx-tree/ngx-tree-api/ngx-tree-api.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'cv', component: CvComponent },
-    { path: 'code', component: CodeComponent },
-    { path: 'tree-example', component: TreeExampleComponent },
+    {
+        path: 'code', children: [
+            { path: 'particle-ins', component: ParticleInsDocComponent },
+            { path: 'tree-ngx-intro', component: NgxTreeDocComponent },
+            { path: 'tree-ngx-api', component: NgxTreeApiComponent },
+            { path: 'tree-ngx-example', component: TreeExampleComponent },
+        ]
+    },
     { path: '**', redirectTo: 'home' },
 ];
 
