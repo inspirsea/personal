@@ -1,0 +1,69 @@
+<ngx-tree-header></ngx-tree-header>
+
+<h3>Examples</h3>
+
+<div class="accent">Template</div>
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      {{templateCode}}
+    </code>
+  </pre>
+</div>
+
+<div class="accent">Multiselect With Checkboxes</div>
+
+<tree-ngx (selectedItems)="multiCheckboxSelected = $event" [nodeItems]="multiCheckboxItems" [options]="multiCheckboxOptions"></tree-ngx>
+
+{{multiCheckboxSelected | json}}
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      {{multiCheckboxCode}}
+    </code>
+  </pre>
+</div>
+
+<div class="accent">Singleselect With Checkboxes</div>
+
+<tree-ngx (selectedItems)="singleCheckboxSelected = $event" [nodeItems]="singleCheckboxItems" [options]="singleCheckboxOptions"></tree-ngx>
+
+{{singleCheckboxSelected | json}}
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      {{singleCheckboxCode}}
+    </code>
+  </pre>
+</div>
+
+<div class="accent">Multiselect</div>
+
+<tree-ngx (selectedItems)="multiSelected = $event" [nodeItems]="multiItems" [options]="multiOptions"></tree-ngx>
+
+{{multiSelected | json}}
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      {{multiCode}}
+    </code>
+  </pre>
+</div>
+
+<div class="accent">Singleselect</div>
+
+<tree-ngx (selectedItems)="singleSelected = $event" [nodeItems]="singleItems" [options]="singleOptions"></tree-ngx>
+
+{{singleSelected | json}}
+
+<div highlight-js-content>
+  <pre>
+    <code>
+      {{singleCode}}
+    </code>
+  </pre>
+</div>

@@ -1,0 +1,38 @@
+<ngx-tree-header></ngx-tree-header>
+
+<h3>Custom Styling</h3>
+
+<div>
+  To customize the style, wrap tree-ngx in your own class and overide the default style.
+  Check in node modules at <br> tree-ngx/style/ngx-tree.scss for the default style.
+</div>
+
+<br>
+
+<span class="accent">Classes to override</span>
+<mat-list>
+  <mat-list-item>.tree-ngx</mat-list-item>
+  <mat-list-item>.node</mat-list-item>
+  <mat-list-item>.node-children</mat-list-item>
+  <mat-list-item>.node-name &.markSelected</mat-list-item>
+  <mat-list-item>.node-offset</mat-list-item>
+  <mat-list-item>.node-icon-wrapper &.disabled
+  </mat-list-item>
+  <mat-list-item>.collapsable</mat-list-item>
+  <mat-list-item>.node-container</mat-list-item>
+  <mat-list-item>.node-checkbox</mat-list-item>
+</mat-list>
+
+<br>
+
+<span class="accent">Example</span>
+
+<div highlight-js-content>
+  <pre>
+      <code>
+        {{customStyleCode}}
+      </code>
+    </pre>
+</div>
+
+<tree-ngx class="my-custom-tree" [nodeItems]="nodeItems"></tree-ngx>

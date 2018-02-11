@@ -211,7 +211,7 @@ h4 {
 
 .content-container {
   display: flex;
-  flex: 0 0 1000px;
+  flex: 0 1 1000px;
   flex-direction: column;
   margin: 5px;
   padding: 15px;
@@ -219,7 +219,7 @@ h4 {
 
 .nav-container {
   display: flex;
-  flex: 0 0 1032px;
+  flex: 0 1 1032px;
 }
 
 .mat-toolbar {
@@ -270,4 +270,13 @@ code {
   color: mat-color($accent, 600);
   width: 200px;
   text-align: left !important;
+}
+
+.treeIcon {
+  vertical-align: text-bottom;
+  font-size: 18px;
+}
+
+.iconCollapsible {
+  font-size: 18px;
 }

@@ -2,8 +2,8 @@
   .node-name {
     padding: 5px 0px 5px 10px;
     &.markSelected {
-      padding: 5px 0px 5px 3px;
-      border-left: 7px mat-color($accent, 600) solid;
+      padding: 5px 0px 5px 4px;
+      border-left: 6px mat-color($accent, 600) solid;
     }
   }
   

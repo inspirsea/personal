@@ -19,6 +19,10 @@ import { StationComponent } from './code/ngx-tree/tree-example/station.component
 import { NgxTreeDocComponent } from './code/ngx-tree/ngx-tree-doc.component';
 import { NgxTreeHeaderComponent } from './code/ngx-tree/ngx-tree-header-doc/ngx-tree-header-doc.component';
 import { NgxTreeApiComponent } from './code/ngx-tree/ngx-tree-api/ngx-tree-api.component';
+import { NgxTreeExamplesComponent } from './code/ngx-tree/ngx-tree-examples/ngx-tree-examples.component';
+import { NgxTreeCustomTemplateComponent } from './code/ngx-tree/ngx-tree-custom-template/ngx-tree-custom-template.component';
+import { TreeDataService } from './service/tree-data.service';
+import { NgxTreeCustomStylingComponent } from './code/ngx-tree/ngx-tree-custom-styling/ngx-tree-custom-styling.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { NgxTreeApiComponent } from './code/ngx-tree/ngx-tree-api/ngx-tree-api.c
     StationComponent,
     NgxTreeDocComponent,
     NgxTreeHeaderComponent,
-    NgxTreeApiComponent
+    NgxTreeApiComponent,
+    NgxTreeExamplesComponent,
+    NgxTreeCustomTemplateComponent,
+    NgxTreeCustomStylingComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,9 @@ import { NgxTreeApiComponent } from './code/ngx-tree/ngx-tree-api/ngx-tree-api.c
     HttpClientModule,
     MatListModule
   ],
-  providers: [],
+  providers: [
+    TreeDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
