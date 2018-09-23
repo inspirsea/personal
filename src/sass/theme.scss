@@ -190,7 +190,6 @@ h4 {
     display: none;
   }
   .print-section {
-    width: 600px;
     color: black;
     page-break-inside: avoid;
   }
@@ -279,4 +278,8 @@ code {
 
 .iconCollapsible {
   font-size: 18px;
+}
+
+.clickable {
+  cursor: pointer;
 }

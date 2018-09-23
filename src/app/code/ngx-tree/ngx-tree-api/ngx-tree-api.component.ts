@@ -10,6 +10,8 @@ export class NgxTreeApiComponent {
   public selectedItemsType = 'EventEmitter<any>';
   public addByIdSignature = 'addNodeById(nodeItem: NodeItem<any>, id: string)';
   public deleteByIdSignature = 'deleteById(id: string)';
+  public editNameByIdSignature = 'editNameById(id: string, name: string)';
+  public editItemByIdSignature = 'editItemById(id: string, item: any)';
   public childrenSignature = 'children?: NodeItem<any>[]';
   public nameCallbackSignature = 'nameClick?: (item: NodeItem<any>) => void';
   public selectCallbackSignature = 'select?: (item: NodeItem<any>) => void';

@@ -17,7 +17,7 @@ export class NgxTreeDocComponent implements OnInit {
   }
 
   //Usage
-  <tree-ngx[nodeItems]="nodeItems"> </tree-ngx>
+  <tree-ngx [nodeItems]="nodeItems"> </tree-ngx>
 
   this.nodeItems = [{
     id: '0',

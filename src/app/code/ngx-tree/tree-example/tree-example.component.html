@@ -5,7 +5,7 @@
   <div style="display: flex; flex: 1 1;">
     <tree-ngx class="my-custom-tree" [nodeItems]="items" [options]="options" (selectedItems)="selectedItemsChanged($event)">
       <ng-template #nodeNameTemplate let-node="node" let-context="context">
-        <span (click)="context.toggleExpand()">{{node.name}}</span>
+        <span class="clickable" (click)="context.toggleExpand()">{{node.name}}</span>
       </ng-template>
     </tree-ngx>
   </div>

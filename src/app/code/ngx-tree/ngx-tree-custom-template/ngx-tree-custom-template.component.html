@@ -41,8 +41,8 @@
 
 <tree-ngx [nodeItems]="customNameItems">
   <ng-template #nodeNameTemplate let-node="node" let-context="context">
-    {{node.name}} id: {{node.id}}
-    <i (click)="context.delete()" class="treeIcon material-icons">delete</i>
+    <span [class.active]="context.active">{{node.name}} id: {{node.id}}</span>
+    <i (click)="context.delete()" class="clickable treeIcon material-icons">delete</i>
   </ng-template>
 </tree-ngx>
 
@@ -74,7 +74,7 @@
 
 <tree-ngx [nodeItems]="customCollapsibleItems">
   <ng-template #nodeCollapsibleTemplate let-expanded="expanded">
-    <i *ngIf="expanded" class="iconCollapsible material-icons">add</i>
-    <i *ngIf="!expanded" class="iconCollapsible material-icons">remove</i>
+    <i *ngIf="!expanded" class="iconCollapsible material-icons">add</i>
+    <i *ngIf="expanded" class="iconCollapsible material-icons">remove</i>
   </ng-template>
 </tree-ngx>

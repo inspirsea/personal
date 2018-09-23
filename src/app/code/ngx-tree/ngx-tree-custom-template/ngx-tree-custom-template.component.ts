@@ -11,8 +11,8 @@ export class NgxTreeCustomTemplateComponent {
   public customCollapsibleCode = `
   <tree-ngx [nodeItems]="customCollapsibleItems">
     <ng-template #nodeCollapsibleTemplate let-expanded="expanded">
-      <span *ngIf="expanded">-</span>
-      <span *ngIf="!expanded">+</span>
+      <span *ngIf="!expanded">-</span>
+      <span *ngIf="expanded">+</span>
     </ng-template>
   </tree-ngx>
   `;
@@ -21,9 +21,8 @@ export class NgxTreeCustomTemplateComponent {
   public customNameTemplateCode = `
   <tree-ngx [nodeItems]="customNameItems">
     <ng-template #nodeNameTemplate let-node="node" let-context="context">
-      {{node.name}}
-      id: {{node.id}}
-      <i (click)="context.delete()" class="deleteIcon material-icons">delete</i>
+      <span [class.active]="context.active">{{node.name}} id: {{node.id}}</span>
+      <i (click)="context.delete()" class="clickable treeIcon material-icons">delete</i>
     </ng-template>
   </tree-ngx>
   `;
