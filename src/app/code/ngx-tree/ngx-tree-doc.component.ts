@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NodeItem } from 'tree-ngx';
 
 @Component({
@@ -11,7 +11,7 @@ export class NgxTreeDocComponent implements OnInit {
   public exampleCode = `
   //Import tree-ngx module
   import { TreeNgxModule } from 'tree-ngx';
-  
+
   @NgModule({
     imports: [TreeNgxModule]
   }

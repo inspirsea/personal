@@ -22,8 +22,25 @@ const appRoutes: Routes = [
             { path: 'tree-ngx-examples', component: NgxTreeExamplesComponent },
             { path: 'tree-ngx-custom-template', component: NgxTreeCustomTemplateComponent },
             { path: 'tree-ngx-custom-styling', component: NgxTreeCustomStylingComponent },
+            { path: '**', redirectTo: 'tree-ngx-intro' }
         ]
     },
+    {
+      path: 'docs', children: [
+          {
+            path: 'tree-ngx', children: [
+              { path: 'tree-ngx-intro', component: NgxTreeDocComponent },
+              { path: 'tree-ngx-api', component: NgxTreeApiComponent },
+              { path: 'tree-ngx-example', component: TreeExampleComponent },
+              { path: 'tree-ngx-examples', component: NgxTreeExamplesComponent },
+              { path: 'tree-ngx-custom-template', component: NgxTreeCustomTemplateComponent },
+              { path: 'tree-ngx-custom-styling', component: NgxTreeCustomStylingComponent },
+              { path: '**', redirectTo: 'tree-ngx-intro' }
+            ]
+          },
+          { path: 'particle-ins', component: ParticleInsDocComponent },
+      ]
+  },
     { path: '**', redirectTo: 'home' },
 ];
 

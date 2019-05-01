@@ -1,7 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
-
+import { Observable, interval } from 'rxjs';
 
 @Component({
   selector: 'home',
@@ -24,7 +22,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    let subscription = Observable.interval(50).subscribe(it => {
+
+    const subscription = interval(50).subscribe(it => {
 
       if (this.sentenceIndex >= this.texts.length) {
         subscription.unsubscribe();
@@ -45,7 +44,7 @@ export class HomeComponent implements OnInit {
       this.cmd.nativeElement.appendChild(document.createElement('br'));
     }
 
-    let sentence = this.texts[this.sentenceIndex];
+    const sentence = this.texts[this.sentenceIndex];
 
     if (sentence) {
       this.cmd.nativeElement.innerHTML += sentence[this.index];
