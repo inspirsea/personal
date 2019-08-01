@@ -3,63 +3,124 @@
 <h3>Api</h3>
 
 <span class="accent">Inputs</span>
-<mat-list>
-  <mat-list-item> nodeItems: {{nodeItemType}} </mat-list-item>
-  <mat-list-item> callbacks: TreeCallbacks </mat-list-item>
-  <mat-list-item> options: TreeOptions</mat-list-item>
-  <mat-list-item> filter: string</mat-list-item>
-</mat-list>
+<p>
+  <span class="bold-text">nodeItems: {{nodeItemType}}</span>
+</p>
+<p>
+  <span class="bold-text">callbacks: TreeCallbacks</span>
+</p>
+<p>
+  <span class="bold-text">options: TreeOptions</span>
+</p>
+<p>
+  <span class="bold-text">filter: string</span>
+</p>
 
-<br>
 <span class="accent">Outputs</span>
-<mat-list>
-  <mat-list-item> selectedItems: {{selectedItemsType}} </mat-list-item>
-</mat-list>
+<p>
+  <span class="bold-text">selectedItems: {{selectedItemsType}}</span>
+</p>
 
-<br>
 <span class="accent">Methods</span>
-<mat-list>
-  <mat-list-item> {{addByIdSignature}} </mat-list-item>
-  <mat-list-item> {{deleteByIdSignature}} </mat-list-item>
-  <mat-list-item> {{editNameByIdSignature}} </mat-list-item>
-  <mat-list-item> {{editItemByIdSignature}} </mat-list-item>
-  <mat-list-item> expandAll()</mat-list-item>
-  <mat-list-item> collapseAll()</mat-list-item>
-</mat-list>
 
+<p>
+  <span class="bold-text">{{addByIdSignature}}</span><br>
+  Add a new node to the tree.
+</p>
+<p>
+  <span class="bold-text">{{deleteByIdSignature}}</span><br>
+  Delete a node from the tree.
+</p>
+<p>
+  <span class="bold-text">{{editNameByIdSignature}}</span><br>
+</p>
+<p>
+  <span class="bold-text">{{editItemByIdSignature}}</span><br>
+</p>
+<p>
+  <span class="bold-text">expandById(id: string)</span><br>
+  Expand all parents of a node.
+</p>
+<p>
+  <span class="bold-text">getParentById(id: string)</span><br>
+  Get the parent of a node.
+</p>
+<p>
+  <span class="bold-text">expandAll()</span><br>
+  Expand all nodes.
+</p>
+<p>
+  <span class="bold-text">collapseAll()</span><br>
+  Collapse all nodes.
+</p>
 
 <h3>{{nodeItemType}}</h3>
 
-<mat-list>
-  <mat-list-item> name: string | Display name of the node </mat-list-item>
-  <mat-list-item> item?: T | Item bound to the node, this is what will be returned on select.</mat-list-item>
-  <mat-list-item> id?: string</mat-list-item>
-  <mat-list-item> {{childrenSignature}} | If children is not set, the node is a leaf.</mat-list-item>
-  <mat-list-item> selected?: boolean | Determines if the node is selected from start. Default is false.</mat-list-item>
-  <mat-list-item> expanded?: boolean | Determines if the node is expanded from start. Only nodes that have children. Default is true.</mat-list-item>
-</mat-list>
+<p>
+  <span class="bold-text">name: string</span><br>
+  Display name of the node
+</p>
+<p>
+  <span class="bold-text">item?: T</span><br>
+  Item bound to the node, this is what will be returned on select.
+</p>
+<p>
+  <span class="bold-text">id?: string</span><br>
+</p>
+<p>
+  <span class="bold-text">{{childrenSignature}}</span><br>
+  If children is not set or 0, the node is a leaf.
+</p>
+<p>
+  <span class="bold-text">selected?: boolean</span><br>
+  Determines if the node is selected from start. Default is false.
+</p>
+<p>
+  <span class="bold-text">expanded?: boolean</span><br>
+  Determines if the node is expanded from start. Only nodes that have children. Default is true.
+</p>
 
 <h3>TreeOptions</h3>
 
-<mat-list>
-  <mat-list-item>mode: TreeMode | Which mode the tree should use, see TreeMode.</mat-list-item>
-  <mat-list-item>checkboxes: boolean | Determines if the tree should have checkboxes for displaying selected nodes.</mat-list-item>
-  <mat-list-item>alwaysEmitSelected: boolean | If true emits selectedItems on every select else only on init.</mat-list-item>
-</mat-list>
+<p>
+  <span class="bold-text">mode: TreeMode</span><br>
+  Which mode the tree should use, see TreeMode.
+</p>
+<p>
+  <span class="bold-text">checkboxes: boolean</span><br>
+  Determines if the tree should have checkboxes for displaying selected nodes.
+</p>
+<p>
+  <span class="bold-text">alwaysEmitSelected: boolean</span><br>
+  If true emits selectedItems on every select else only on init.
+</p>
 
 <h3>TreeCallbacks</h3>
 
-<mat-list>
-  <mat-list-item>{{nameCallbackSignature}}</mat-list-item>
-  <mat-list-item>{{selectCallbackSignature}}</mat-list-item>
-  <mat-list-item>{{unSelectCallbackSignature}}</mat-list-item>
-  <mat-list-item>{{toggleCallbackSignature}}</mat-list-item>
-</mat-list>
+<p>
+  <span class="bold-text">{{nameCallbackSignature}}</span>
+</p>
+<p>
+  <span class="bold-text">{{selectCallbackSignature}}</span>
+</p>
+<p>
+  <span class="bold-text">{{unSelectCallbackSignature}}</span><br>
+</p>
+<p>
+  <span class="bold-text">{{toggleCallbackSignature}}</span><br>
+</p>
 
 <h3>TreeMode</h3>
 
-<mat-list>
-  <mat-list-item>NoSelect | Dont allow item selection</mat-list-item>
-  <mat-list-item>SingleSelect | Select one item at a time, if a second item is selected it will replace the current one.</mat-list-item>
-  <mat-list-item>MultiSelect | Select multiple items.</mat-list-item>
-</mat-list>
+<p>
+  <span class="bold-text">NoSelect</span><br>
+  Dont allow item selection
+</p>
+<p>
+  <span class="bold-text">SingleSelect</span><br>
+  Select one item at a time, if a second item is selected it will replace the current one.
+</p>
+<p>
+  <span class="bold-text">MultiSelect</span><br>
+  Select multiple items.
+</p>
