@@ -3,124 +3,151 @@
 <h3>Api</h3>
 
 <span class="accent">Inputs</span>
-<p>
-  <span class="bold-text">nodeItems: {{nodeItemType}}</span>
-</p>
-<p>
-  <span class="bold-text">callbacks: TreeCallbacks</span>
-</p>
-<p>
-  <span class="bold-text">options: TreeOptions</span>
-</p>
-<p>
-  <span class="bold-text">filter: string</span>
-</p>
+
+<div class="indent">
+  <p>
+    <span class="bold-text">nodeItems: NodeItem&lt;T&gt;</span>
+  </p>
+  <p>
+    <span class="bold-text">callbacks: TreeCallbacks</span>
+  </p>
+  <p>
+    <span class="bold-text">options: TreeOptions</span>
+  </p>
+  <p>
+    <span class="bold-text">filter: string</span>
+  </p>
+</div>
+
 
 <span class="accent">Outputs</span>
-<p>
-  <span class="bold-text">selectedItems: {{selectedItemsType}}</span>
-</p>
+
+<div class="indent">
+  <p>
+    <span class="bold-text">selectedItems: EventEmitter&lt;T&gt;</span>
+  </p>
+</div>
 
 <span class="accent">Methods</span>
 
-<p>
-  <span class="bold-text">{{addByIdSignature}}</span><br>
-  Add a new node to the tree.
-</p>
-<p>
-  <span class="bold-text">{{deleteByIdSignature}}</span><br>
-  Delete a node from the tree.
-</p>
-<p>
-  <span class="bold-text">{{editNameByIdSignature}}</span><br>
-</p>
-<p>
-  <span class="bold-text">{{editItemByIdSignature}}</span><br>
-</p>
-<p>
-  <span class="bold-text">expandById(id: string)</span><br>
-  Expand all parents of a node.
-</p>
-<p>
-  <span class="bold-text">getParentById(id: string)</span><br>
-  Get the parent of a node.
-</p>
-<p>
-  <span class="bold-text">expandAll()</span><br>
-  Expand all nodes.
-</p>
-<p>
-  <span class="bold-text">collapseAll()</span><br>
-  Collapse all nodes.
-</p>
+<div class="indent">
+  <p>
+    <i>Add a new node to the tree</i><br>
+    <span class="bold-text">addNodeById(nodeItem: NodeItem&lt;T&gt;, id?: string): void</span><br>
+  </p>
+  <p>
+    <i>Delete a node from the tree</i><br>
+    <span class="bold-text">deleteById(id: string): void</span><br>
+  </p>
+  <p>
+    <i>Edit name of node.</i><br>
+    <span class="bold-text">editNameById(id: string, name: string): void</span><br>
+  </p>
+  <p>
+    <i>Edit item of node</i><br>
+    <span class="bold-text">editItemById(id: string, item: T): void</span><br>
+  </p>
+  <p>
+    <i>Expand all parents of a node</i><br>
+    <span class="bold-text">expandById(id: string): void</span><br>
+  </p>
+  <p>
+    <i>Collapse all parents of a node</i><br>
+    <span class="bold-text">collapseById(id: string): void</span><br>
+  </p>
+  <p>
+    <i>Trigger a select action of a node</i><br>
+    <span class="bold-text">selectById(id: string): void</span><br>
+  </p>
+  <p>
+    <i>Get the parent of a node</i><br>
+    <span class="bold-text">getParentById(id: string): NodeItem&lt;T&gt;</span><br>
+  </p>
+  <p>
+    <i>Expand all nodes</i><br>
+    <span class="bold-text">expandAll()</span><br>
+  </p>
+  <p>
+    <i>Collapse all nodes</i><br>
+    <span class="bold-text">collapseAll()</span><br>
+  </p>
+</div>
 
-<h3>{{nodeItemType}}</h3>
+<h3>NodeItem&lt;T&gt;</h3>
 
-<p>
-  <span class="bold-text">name: string</span><br>
-  Display name of the node
-</p>
-<p>
-  <span class="bold-text">item?: T</span><br>
-  Item bound to the node, this is what will be returned on select.
-</p>
-<p>
-  <span class="bold-text">id?: string</span><br>
-</p>
-<p>
-  <span class="bold-text">{{childrenSignature}}</span><br>
-  If children is not set or 0, the node is a leaf.
-</p>
-<p>
-  <span class="bold-text">selected?: boolean</span><br>
-  Determines if the node is selected from start. Default is false.
-</p>
-<p>
-  <span class="bold-text">expanded?: boolean</span><br>
-  Determines if the node is expanded from start. Only nodes that have children. Default is true.
-</p>
+<div class="indent">
+  <p>
+    <i>Node identifier</i><br>
+    <span class="bold-text">id?: string</span><br>
+  </p>
+  <p>
+    <i>Name to be displayed</i><br>
+    <span class="bold-text">name: string</span><br>
+  </p>
+  <p>
+    <i>Item bound to the node, this is what will be returned on select</i><br>
+    <span class="bold-text">item?: T</span><br>
+  </p>
+  <p>
+    <i> If children is not set or 0, the node is a leaf</i><br>
+    <span class="bold-text">children?: NodeItem&lt;T&gt;[]</span><br>
+  </p>
+  <p>
+    <i>Determines if the node is selected from start. Default is false</i><br>
+    <span class="bold-text">selected?: boolean</span><br>
+  </p>
+  <p>
+    <i>Determines if the node is expanded from start. Only nodes that have children. Default is true</i><br>
+    <span class="bold-text">expanded?: boolean</span><br>
+  </p>
+</div>
 
 <h3>TreeOptions</h3>
 
-<p>
-  <span class="bold-text">mode: TreeMode</span><br>
-  Which mode the tree should use, see TreeMode.
-</p>
-<p>
-  <span class="bold-text">checkboxes: boolean</span><br>
-  Determines if the tree should have checkboxes for displaying selected nodes.
-</p>
-<p>
-  <span class="bold-text">alwaysEmitSelected: boolean</span><br>
-  If true emits selectedItems on every select else only on init.
-</p>
+<div class="indent">
+  <p>
+    <i>Which mode the tree should use, see TreeMode</i><br>
+    <span class="bold-text">mode: TreeMode</span><br>
+  </p>
+  <p>
+    <i>Determines if the tree should have checkboxes for displaying selected nodes</i><br>
+    <span class="bold-text">checkboxes: boolean</span><br>
+  </p>
+  <p>
+    <i>If true emits selectedItems on every select else only on init.</i><br>
+    <span class="bold-text">alwaysEmitSelected: boolean</span><br>
+  </p>
+</div>
 
 <h3>TreeCallbacks</h3>
 
-<p>
-  <span class="bold-text">{{nameCallbackSignature}}</span>
-</p>
-<p>
-  <span class="bold-text">{{selectCallbackSignature}}</span>
-</p>
-<p>
-  <span class="bold-text">{{unSelectCallbackSignature}}</span><br>
-</p>
-<p>
-  <span class="bold-text">{{toggleCallbackSignature}}</span><br>
-</p>
+<div class="indent">
+  <p>
+    <span class="bold-text">nameClick?: (item: NodeItem&lt;T&gt;) => void</span>
+  </p>
+  <p>
+    <span class="bold-text">select?: (item: NodeItem&lt;T&gt;) => void</span>
+  </p>
+  <p>
+    <span class="bold-text">unSelect?: (item: NodeItem&lt;T&gt;) => void</span><br>
+  </p>
+  <p>
+    <span class="bold-text">toggle?: (item: NodeItem&lt;T&gt;) => void</span><br>
+  </p>
+</div>
 
 <h3>TreeMode</h3>
-
-<p>
-  <span class="bold-text">NoSelect</span><br>
-  Dont allow item selection
-</p>
-<p>
-  <span class="bold-text">SingleSelect</span><br>
-  Select one item at a time, if a second item is selected it will replace the current one.
-</p>
-<p>
-  <span class="bold-text">MultiSelect</span><br>
-  Select multiple items.
-</p>
+<div class="indent">
+  <p>
+    <i>Dont allow item selection</i><br>
+    <span class="bold-text">NoSelect</span><br>
+  </p>
+  <p>
+    <i>Select one item at a time, if a second item is selected it will replace the current one</i><br>
+    <span class="bold-text">SingleSelect</span><br>
+  </p>
+  <p>
+    <i>Select multiple items</i><br>
+    <span class="bold-text">MultiSelect</span><br>
+  </p>
+</div>
